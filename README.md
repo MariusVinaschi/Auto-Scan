@@ -1,2 +1,32 @@
-# Auto-Scan
-Automate Auxiliary Module in Metasploit
+# Auto Scan 
+
+AutoScan is a WebApp that use Flask API and MongoDB. This app launches an Nmap scan and depending of the open ports, will start Auxiliary Module. The results will be shown on the WebApp.
+
+## Interface :  
+
+Start a new scan
+
+![](Images/StartScan.png)
+
+See all the scans
+
+![](Images/Scans.png)
+
+See the result for one scan
+
+![](Images/Result.png)
+
+## Built With :
+
+#### Frontend : 
+We created the interface with React Typescript and Material-UI. 
+#### API :
+The API is created with Flask : 
+* flask-restful to encourage best practices
+* pymetasploit3 to use Metasploit
+* nmap3 to use Nmap 
+* marshmallow to check the Input
+* flask-pymongo to store the result 
+* flask-jwt-extended to create Token
+#### Database :
+We use MongoDB to stock the results. 
