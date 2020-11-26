@@ -1,6 +1,6 @@
 # Auto Scan 
 
-AutoScan is a WebApp that use Flask API and MongoDB. This app launches an Nmap scan and depending of the open ports, will start Auxiliary Module. The results will be shown on the WebApp.
+AutoScan is a WebApp that use Flask API and MongoDB. This app launches a Nmap scan and depending on the open ports, will start Auxiliary Module. The results will be shown on the WebApp.
 
 ## Interface :  
 
