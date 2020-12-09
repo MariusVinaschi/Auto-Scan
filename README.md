@@ -30,3 +30,16 @@ The API was created with Flask :
 * flask-jwt-extended to create Token
 #### Database :
 We use MongoDB to stock the results. 
+
+## Install 
+
+```
+git clone --branch Docker https://github.com/MariusVinaschi/Auto-Scan.git
+cd Auto-Scan 
+COMPOSE_HTTP_TIMEOUT=200 docker-compose up -d                                                                   
+docker inspect frontend
+```
+
+Find the IP address of the docker frontend. 
+
+Open your browser and search : http://IP_Frontend:3000
