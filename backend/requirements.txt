@@ -10,4 +10,3 @@ pymongo==3.11.0
 python3-nmap==1.4.8
 urllib3==1.25.8
 Werkzeug==1.0.1
-

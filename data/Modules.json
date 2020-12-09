@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "5f7d886c7d7e7128d76ea63e"
+  },
+  "name": "Basic_Scan",
+  "ports": {
+    "10": {
+      "modules": []
+    },
+    "80": {
+      "modules": []
+    },
+    "139": {
+      "modules": [
+        {
+          "name": "scanner/smb/smb_version",
+          "parameters": [
+            {
+              "label": "RHOSTS",
+              "value": "IP"
+            },
+            {
+              "label": "THREADS",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "scanner/smb/smb_ms17_010",
+          "parameters": [
+            {
+              "label": "RHOSTS",
+              "value": "IP"
+            },
+            {
+              "label": "THREADS",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "scanner/smb/smb_enumusers",
+          "parameters": [
+            {
+              "label": "RHOSTS",
+              "value": "IP"
+            },
+            {
+              "label": "THREADS",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "scanner/smb/smb_lookupsid",
+          "parameters": [
+            {
+              "label": "RHOSTS",
+              "value": "IP"
+            },
+            {
+              "label": "THREADS",
+              "value": 1
+            },
+            {
+              "label": "MinRID",
+              "value": 4000
+            },
+            {
+              "label": "MaxRID",
+              "value": 500
+            }
+          ]
+        }
+      ]
+    }
+  }
+}]
