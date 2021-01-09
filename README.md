@@ -6,15 +6,15 @@ AutoScan is a WebApp that uses Flask API and MongoDB. This app launches a Nmap s
 
 Start a new scan
 
-![](Images/StartScan.png)
+![](images/StartScan.png)
 
 See all the scans
 
-![](Images/Scans.png)
+![](images/Scans.png)
 
 See the results for one scan
 
-![](Images/Result.png)
+![](images/Result.png)
 
 ## Built With :
 

@@ -1,0 +1,30 @@
+[
+  {
+    "_id": {
+      "$oid": "5f6a5ebeb6b4d001cad4e6e7"
+    },
+    "surname": "Admin",
+    "name": "Admin",
+    "mail": "admin@gmail.com",
+    "job": "Admin",
+    "password": "password",
+    "server": {
+      "ip": "metasploit",
+      "password": "123456"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f6a5f12b6b4d001cad4e6e8"
+    },
+    "surname": "User",
+    "name": "User",
+    "mail": "user@gmail.com",
+    "job": "User",
+    "password": "password",
+    "server": {
+      "ip": "metasploit",
+      "password": "123456"
+    }
+  }
+]

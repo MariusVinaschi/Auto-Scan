@@ -1,3 +1,5 @@
+import os 
+
 from flask import Flask , jsonify
 from flask_restful import Api
 from flask_pymongo import PyMongo
@@ -11,9 +13,9 @@ from resources.server import Server
 from blacklist import BLACKLIST 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongoserver"
+app.config["MONGO_URI"] = 'mongodb://' + os.environ['MONGODB_USERNAME'] + ':' + os.environ['MONGODB_PASSWORD'] + '@' + os.environ['MONGODB_HOSTNAME'] + ':27017/' + os.environ['MONGODB_DATABASE']
 app.config['PROPAGATE_EXCEPTIONS'] = True
-app.config['JWT_SECRET_KEY'] = 'SecretKey'
+app.config['JWT_SECRET_KEY'] = os.environ['SECRET_KEY']
 mongo = PyMongo(app)
 api = Api(app)
 
@@ -69,5 +71,5 @@ api.add_resource(User,'/user')
 api.add_resource(Server,'/server')
 
 if __name__ == "__main__":
-    app.run(port=5000,debug=True)
+    app.run(host='0.0.0.0',port=5000,debug=True)
     

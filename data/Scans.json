@@ -1,0 +1,85 @@
+[
+  {
+    "_id": {
+      "$oid": "5f7af51a5368eb248c8d238e"
+    },
+    "name": "scan 2",
+    "ip": "192.168.1.85",
+    "user": {
+      "$oid": "5f6a5ebeb6b4d001cad4e6e7"
+    },
+    "team": {
+      "$oid": "5f6c71cc32517617c86f63da"
+    },
+    "date": {
+      "$date": "2020-09-29T13:03:04.546Z"
+    },
+    "nmap": [
+      {
+        "port": "21",
+        "service": "ftp"
+      },
+      {
+        "port": "22",
+        "service": "ssh"
+      },
+      {
+        "port": "23",
+        "service": "telnet"
+      },
+      {
+        "port": "25",
+        "service": "smtp"
+      },
+      {
+        "port": "53",
+        "service": "domain"
+      },
+      {
+        "port": "80",
+        "service": "http"
+      },
+      {
+        "port": "111",
+        "service": "rpcbind"
+      },
+      {
+        "port": "139",
+        "service": "netbios-ssn"
+      }
+    ],
+    "metasploit": [
+      {
+        "port": "139",
+        "modules": [
+          {
+            "name": "scanner/smb/smb_version",
+            "results": [
+              "[*] 192.168.1.85:445      - Host could not be identified: Unix (Samba 3.0.20-Debian)"
+            ]
+          },
+          {
+            "name": "scanner/smb/smb_ms17_010",
+            "results": [
+              "[-] 192.168.1.85:445      - Host does NOT appear vulnerable."
+            ]
+          },
+          {
+            "name": "scanner/smb/smb_enumusers",
+            "results": [
+              "Error: 192.168.1.85 Rex::Proto::DCERPC::Exceptions::Fault DCERPC FAULT => nca_op_rng_error",
+              "Error: 192.168.1.85 Rex::Proto::DCERPC::Exceptions::Fault DCERPC FAULT => nca_op_rng_error"
+            ]
+          },
+          {
+            "name": "scanner/smb/smb_lookupsid",
+            "results": [
+              "Error: Rex::Proto::DCERPC::Exceptions::Fault DCERPC FAULT => nca_op_rng_error",
+              "Error: Rex::Proto::DCERPC::Exceptions::Fault DCERPC FAULT => nca_op_rng_error"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

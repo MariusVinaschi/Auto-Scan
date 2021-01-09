@@ -1,0 +1,86 @@
+version: "3.8" 
+
+services : 
+    frontend : 
+        container_name: frontend
+        hostname: frontend
+        build: ./frontend 
+        tty: true
+        ports : 
+            - 3000:3000
+        environment:
+            NODE_ENV: development
+            FLASK_NAME: backend 
+        networks :
+            - webappnetwork
+        depends_on:
+            - api
+        
+    api :
+        container_name: backend 
+        hostname: backend 
+        build: ./backend 
+        ports : 
+            - 5000:5000
+        environment:
+            SECRET_KEY: secretkey
+            MONGODB_DATABASE: AutoScanDb
+            MONGODB_USERNAME: user
+            MONGODB_PASSWORD: password
+            MONGODB_HOSTNAME: mongodb
+        networks :
+            - webappnetwork
+        depends_on: 
+            - mongo
+
+    mongo :
+        container_name: mongodb 
+        image : mongo:latest 
+        hostname : mongodb 
+        restart : always
+        environment:
+            MONGO_INITDB_DATABASE: AutoScanDb 
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: password
+        ports:
+            - 27017:27017
+        volumes:
+            - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+            - ./mongo-volume:/data/db
+        networks :
+            - webappnetwork     
+
+    mongo-seed: 
+        image: fvilers/mongo-seed
+        environment:
+            - MONGO_HOST=mongo
+            - MONGO_PORT=27017
+        volumes:
+            - ./data:/data
+        networks :
+            - webappnetwork     
+        depends_on:
+            - mongo 
+        command: "mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Modules --type json --file /data/Modules.json --jsonArray
+                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Scans --type json --file /data/Scans.json --jsonArray
+                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Users --type json --file /data/Users.json --jsonArray 
+                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Teams --type json --file /data/Teams.json --jsonArray"
+
+    metasploit : 
+        container_name: metasploit 
+        hostname: metasploit 
+        build : ./metasploit 
+        ports : 
+            - 55552:55552
+            - 55553:55553 
+        networks :
+            - webappnetwork
+        depends_on : 
+            - api
+            
+networks :  
+    webappnetwork:
+        driver : bridge
+
+volumes:
+    mongodb_data_container:
