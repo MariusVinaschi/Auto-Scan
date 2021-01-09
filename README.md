@@ -34,9 +34,9 @@ We use MongoDB to stock the results.
 ## Install 
 
 ```
-git clone --branch Docker https://github.com/MariusVinaschi/Auto-Scan.git
+git clone https://github.com/MariusVinaschi/Auto-Scan.git
 cd Auto-Scan 
-COMPOSE_HTTP_TIMEOUT=200 docker-compose up -d                                                                   
+docker-compose up -d                                                                   
 ```
 
 Open your browser and search : http://localhost:3000
