@@ -1,0 +1,516 @@
+[{
+  "_id": {
+    "$oid": "6073ed45ae8e2ba49fb20180"
+  },
+  "name": "scanAD",
+  "list_target": [
+    "192.168.1.60",
+    "192.168.1.78"
+  ],
+  "user": {
+    "$oid": "5f6a5f12b6b4d001cad4e6e8"
+  },
+  "team": {
+    "$oid": "5f6c71cc32517617c86f63da"
+  },
+  "date": {
+    "$date": "2021-04-12T06:48:37.226Z"
+  },
+  "hosts": [
+    {
+      "IP": "192.168.1.78",
+      "name": "THEPUNISHER",
+      "Ports": [
+        {
+          "portid": "135",
+          "service": "msrpc",
+          "product": "Microsoft Windows RPC"
+        },
+        {
+          "portid": "139",
+          "service": "netbios-ssn",
+          "product": "Microsoft Windows netbios-ssn"
+        },
+        {
+          "portid": "445",
+          "service": "microsoft-ds"
+        },
+        {
+          "portid": "5357",
+          "service": "http",
+          "product": "Microsoft HTTPAPI httpd",
+          "extrainfo": "SSDP/UPnP"
+        }
+      ],
+      "users": [
+        {
+          "username": "Administrator",
+          "uid": 500,
+          "fullname": "",
+          "primary_group_id": 513,
+          "bad_password_count": 7,
+          "logon_count": 1,
+          "password_last_set": "<never>",
+          "is_expire": "True",
+          "is_disable": "True",
+          "comment": ""
+        },
+        {
+          "username": "DefaultAccount",
+          "uid": 503,
+          "fullname": "",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 0,
+          "password_last_set": "<never>",
+          "is_expire": "True",
+          "is_disable": "True",
+          "comment": ""
+        },
+        {
+          "username": "Frank Castle",
+          "uid": 1001,
+          "fullname": "",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 12,
+          "password_last_set": "2021-03-07 19:56:44.396338",
+          "is_expire": "True",
+          "is_disable": "False",
+          "comment": ""
+        },
+        {
+          "username": "Guest",
+          "uid": 501,
+          "fullname": "",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 0,
+          "password_last_set": "<never>",
+          "is_expire": "True",
+          "is_disable": "True",
+          "comment": ""
+        },
+        {
+          "username": "WDAGUtilityAccount",
+          "uid": 504,
+          "fullname": "",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 0,
+          "password_last_set": "2020-11-19 07:30:19.653710",
+          "is_expire": "False",
+          "is_disable": "True",
+          "comment": ""
+        }
+      ],
+      "shares": [
+        {
+          "share": "ADMIN$",
+          "privs": "READ_WRITE",
+          "comment": "Remote Admin"
+        },
+        {
+          "share": "C$",
+          "privs": "READ_WRITE",
+          "comment": "Default share"
+        },
+        {
+          "share": "IPC$",
+          "privs": "READ_ONLY",
+          "comment": "Remote IPC"
+        }
+      ]
+    },
+    {
+      "IP": "192.168.1.60",
+      "name": "HYDRA-DC",
+      "Ports": [
+        {
+          "portid": "53",
+          "service": "domain",
+          "product": "Simple DNS Plus"
+        },
+        {
+          "portid": "88",
+          "service": "kerberos-sec",
+          "product": "Microsoft Windows Kerberos",
+          "extrainfo": "server time: 2021-04-08 09:55:44Z"
+        },
+        {
+          "portid": "135",
+          "service": "msrpc",
+          "product": "Microsoft Windows RPC"
+        },
+        {
+          "portid": "139",
+          "service": "netbios-ssn",
+          "product": "Microsoft Windows netbios-ssn"
+        },
+        {
+          "portid": "389",
+          "service": "ldap",
+          "product": "Microsoft Windows Active Directory LDAP",
+          "extrainfo": "Domain: MARVEL.local0., Site: Default-First-Site-Name"
+        },
+        {
+          "portid": "445",
+          "service": "microsoft-ds"
+        },
+        {
+          "portid": "464",
+          "service": "kpasswd5"
+        },
+        {
+          "portid": "593",
+          "service": "ncacn_http",
+          "product": "Microsoft Windows RPC over HTTP"
+        },
+        {
+          "portid": "636",
+          "service": "ldap",
+          "product": "Microsoft Windows Active Directory LDAP",
+          "extrainfo": "Domain: MARVEL.local0., Site: Default-First-Site-Name"
+        },
+        {
+          "portid": "3268",
+          "service": "ldap",
+          "product": "Microsoft Windows Active Directory LDAP",
+          "extrainfo": "Domain: MARVEL.local0., Site: Default-First-Site-Name"
+        },
+        {
+          "portid": "3269",
+          "service": "ldap",
+          "product": "Microsoft Windows Active Directory LDAP",
+          "extrainfo": "Domain: MARVEL.local0., Site: Default-First-Site-Name"
+        },
+        {
+          "portid": "5357",
+          "service": "http",
+          "product": "Microsoft HTTPAPI httpd",
+          "extrainfo": "SSDP/UPnP"
+        }
+      ],
+      "domain_controller": true,
+      "users": [
+        {
+          "username": "Administrator",
+          "uid": 500,
+          "fullname": "",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 140,
+          "password_last_set": "2021-03-03 09:17:06.073997",
+          "is_expire": "True",
+          "is_disable": "False",
+          "comment": ""
+        },
+        {
+          "username": "Guest",
+          "uid": 501,
+          "fullname": "",
+          "primary_group_id": 514,
+          "bad_password_count": 0,
+          "logon_count": 0,
+          "password_last_set": "<never>",
+          "is_expire": "True",
+          "is_disable": "True",
+          "comment": ""
+        },
+        {
+          "username": "krbtgt",
+          "uid": 502,
+          "fullname": "",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 0,
+          "password_last_set": "2021-03-03 14:19:49.266800",
+          "is_expire": "False",
+          "is_disable": "True",
+          "comment": ""
+        },
+        {
+          "username": "fcastle",
+          "uid": 1103,
+          "fullname": "Frank Castle",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 14,
+          "password_last_set": "2021-03-03 14:39:30.886855",
+          "is_expire": "True",
+          "is_disable": "False",
+          "comment": ""
+        },
+        {
+          "username": "pparker",
+          "uid": 1104,
+          "fullname": "Peter Parker",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 0,
+          "password_last_set": "2021-03-03 14:41:53.964998",
+          "is_expire": "True",
+          "is_disable": "False",
+          "comment": ""
+        },
+        {
+          "username": "SQLService",
+          "uid": 1105,
+          "fullname": "SQL Service",
+          "primary_group_id": 513,
+          "bad_password_count": 0,
+          "logon_count": 0,
+          "password_last_set": "2021-03-03 14:45:38.323963",
+          "is_expire": "True",
+          "is_disable": "False",
+          "comment": ""
+        }
+      ],
+      "shares": [
+        {
+          "share": "ADMIN$",
+          "privs": "READ_WRITE",
+          "comment": "Remote Admin"
+        },
+        {
+          "share": "C$",
+          "privs": "READ_WRITE",
+          "comment": "Default share"
+        },
+        {
+          "share": "hackme",
+          "privs": "READ_WRITE",
+          "comment": ""
+        },
+        {
+          "share": "IPC$",
+          "privs": "READ_ONLY",
+          "comment": "Remote IPC"
+        },
+        {
+          "share": "NETLOGON",
+          "privs": "READ_WRITE",
+          "comment": "Logon server share "
+        },
+        {
+          "share": "SYSVOL",
+          "privs": "READ_WRITE",
+          "comment": "Logon server share "
+        }
+      ]
+    }
+  ],
+  "domain": {
+    "domain_controler_ip": "192.168.1.60",
+    "domain_controler_name": "HYDRA-DC",
+    "name": "MARVEL",
+    "groups": [
+      {
+        "name": "Administrators"
+      },
+      {
+        "name": "Users"
+      },
+      {
+        "name": "Guests"
+      },
+      {
+        "name": "Print Operators"
+      },
+      {
+        "name": "Backup Operators"
+      },
+      {
+        "name": "Replicator"
+      },
+      {
+        "name": "Remote Desktop Users"
+      },
+      {
+        "name": "Network Configuration Operators"
+      },
+      {
+        "name": "Performance Monitor Users"
+      },
+      {
+        "name": "Performance Log Users"
+      },
+      {
+        "name": "Distributed COM Users"
+      },
+      {
+        "name": "IIS_IUSRS"
+      },
+      {
+        "name": "Cryptographic Operators"
+      },
+      {
+        "name": "Event Log Readers"
+      },
+      {
+        "name": "Certificate Service DCOM Access"
+      },
+      {
+        "name": "RDS Remote Access Servers"
+      },
+      {
+        "name": "RDS Endpoint Servers"
+      },
+      {
+        "name": "RDS Management Servers"
+      },
+      {
+        "name": "Hyper-V Administrators"
+      },
+      {
+        "name": "Access Control Assistance Operators"
+      },
+      {
+        "name": "Remote Management Users"
+      },
+      {
+        "name": "Storage Replica Administrators"
+      },
+      {
+        "name": "Domain Computers"
+      },
+      {
+        "name": "Domain Controllers"
+      },
+      {
+        "name": "Schema Admins"
+      },
+      {
+        "name": "Enterprise Admins"
+      },
+      {
+        "name": "Cert Publishers"
+      },
+      {
+        "name": "Domain Admins"
+      },
+      {
+        "name": "Domain Users"
+      },
+      {
+        "name": "Domain Guests"
+      },
+      {
+        "name": "Group Policy Creator Owners"
+      },
+      {
+        "name": "RAS and IAS Servers"
+      },
+      {
+        "name": "Server Operators"
+      },
+      {
+        "name": "Account Operators"
+      },
+      {
+        "name": "Pre-Windows 2000 Compatible Access"
+      },
+      {
+        "name": "Incoming Forest Trust Builders"
+      },
+      {
+        "name": "Windows Authorization Access Group"
+      },
+      {
+        "name": "Terminal Server License Servers"
+      },
+      {
+        "name": "Allowed RODC Password Replication Group"
+      },
+      {
+        "name": "Denied RODC Password Replication Group"
+      },
+      {
+        "name": "Read-only Domain Controllers"
+      },
+      {
+        "name": "Enterprise Read-only Domain Controllers"
+      },
+      {
+        "name": "Cloneable Domain Controllers"
+      },
+      {
+        "name": "Protected Users"
+      },
+      {
+        "name": "Key Admins"
+      },
+      {
+        "name": "Enterprise Key Admins"
+      },
+      {
+        "name": "DnsAdmins"
+      },
+      {
+        "name": "DnsUpdateProxy"
+      }
+    ],
+    "users": [
+      {
+        "username": "Administrator",
+        "password": "Password1",
+        "mail": "",
+        "password_last_set": "2021-03-03 09:17:06.073997",
+        "last_logon": "2021-04-08 09:56:39.298313"
+      },
+      {
+        "username": "Guest",
+        "password": "",
+        "mail": "",
+        "password_last_set": "<never>",
+        "last_logon": "<never>"
+      },
+      {
+        "username": "krbtgt",
+        "password": "",
+        "mail": "",
+        "password_last_set": "2021-03-03 14:19:49.266800",
+        "last_logon": "<never>"
+      },
+      {
+        "username": "fcastle",
+        "password": "",
+        "mail": "",
+        "password_last_set": "2021-03-03 14:39:30.886855",
+        "last_logon": "2021-04-02 07:18:04.277325"
+      },
+      {
+        "username": "pparker",
+        "password": "",
+        "mail": "",
+        "password_last_set": "2021-03-03 14:41:53.964998",
+        "last_logon": "<never>"
+      },
+      {
+        "username": "SQLService",
+        "password": "",
+        "mail": "",
+        "password_last_set": "2021-03-03 14:45:38.323963",
+        "last_logon": "<never>"
+      }
+    ],
+    "services": [
+      {
+        "service_principal_name": "HYDRA-DC/SQLService.MARVEL.local:60111",
+        "name": "SQLService",
+        "member_of": "CN=Group Policy Creator Owners,OU=Groups,DC=MARVEL,DC=local",
+        "password_last_set": "2021-03-03 14:45:38.323963",
+        "last_logon": "<never>",
+        "delegation": ""
+      }
+    ]
+  },
+  "credentials": [
+    {
+      "ip": "192.168.1.78",
+      "domain": "MARVEL",
+      "username": "Administrator",
+      "password": "Password1"
+    }
+  ]
+}]

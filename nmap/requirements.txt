@@ -1,0 +1,6 @@
+uvicorn
+fastapi
+ipaddress
+python3-nmap
+pydantic
+typing

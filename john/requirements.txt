@@ -1,0 +1,4 @@
+uvicorn
+fastapi
+typing
+pydantic

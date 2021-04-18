@@ -4,17 +4,17 @@ import axios from 'axios';
 
 import TemplateViewPages from '../Component/View/TemplateViewPages';
 import {UserContext} from '../Context/UserContext';
-import {ScansApiInterface , NmapInterface} from '../Interface/ApiInterface';
+import {ScansAdApiInterface, } from '../Interface/ApiInterface';
 
 import InformationBox from '../Component/View/InformationBox';
 import TextContainer from '../Component/TextContainer'
 
-const ViewScans = () => {
-    const [Scans, setScans] = useState<ScansApiInterface[]>([])
+const ViewAdScans = () => {
+    const [Scans, setScans] = useState<ScansAdApiInterface[]>([])
     const {User} = useContext(UserContext)
 
     useEffect(() => {
-        axios.get('/scans',{ headers : {'Authorization' : 'Bearer ' + User.access_token}})
+        axios.get('/scansAd',{ headers : {'Authorization' : 'Bearer ' + User.access_token}})
         .then(res => {
             setScans(res.data)
         })
@@ -23,23 +23,15 @@ const ViewScans = () => {
         })
     }, [User])
 
-    const setPorts = (ports: NmapInterface[] ) => {
-        var stringPort:string = ''
-        ports.forEach(port  => {
-            stringPort += port.port + ', '
-        });
-        return stringPort
-    }
-
     return (
-        <TemplateViewPages title='My Metasploit Scans'>
+        <TemplateViewPages title='My Active Directory Scans'>
             {Scans.map((scan) => (
                 <Grid item key={scan.id} xs={12} sm={6} md={4} lg={4} xl={4} >
-                    <InformationBox id={scan.id} name={scan.name} path={'scan'}>
+                    <InformationBox id={scan.id} name={scan.name} path={'scanAd'}>
                         <TextContainer label={'User :'} text={scan.user.surname + ' ' + scan.user.name} />
                         <TextContainer label={'Team :'} text={scan.team.name} />
                         <TextContainer label={'Date :'} text={scan.date.substr(0, 10)}/> 
-                        <TextContainer label={'Ports :'} text={setPorts(scan.nmap)}/> 
+                        <TextContainer label={'Domain Name :'} text={scan.domain.name} /> 
                     </InformationBox>
                 </Grid>
             ))}
@@ -47,4 +39,4 @@ const ViewScans = () => {
     )
 }
 
-export default ViewScans
+export default ViewAdScans

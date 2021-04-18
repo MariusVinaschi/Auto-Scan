@@ -1,6 +1,6 @@
 # Auto Scan 
 
-AutoScan is a WebApp that uses Flask API and MongoDB. This app launches a Nmap scan and depending on the open ports, the App will start some Auxiliary Module. The results will be shown on the WebApp.
+AutoScan is a WebApp that uses FlaskAPI/FastAPI and MongoDB. This app will start several tools to pentest Active Directory. The results will be shown on the WebApp.
 
 ## Interface :  
 
@@ -30,6 +30,14 @@ The API was created with Flask :
 * flask-jwt-extended to create Token
 #### Database :
 We use MongoDB to stock the results. 
+#### Tools :
+We use several tools : 
+* Nmap 
+* Responder 
+* John 
+* SMBMAP 
+* CrackMapExec
+* Impacket 
 
 ## Install 
 

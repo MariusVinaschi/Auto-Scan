@@ -1,0 +1,8 @@
+uvicorn
+fastapi
+pyasn1
+configparser
+termcolor
+impacket
+pydantic
+typing

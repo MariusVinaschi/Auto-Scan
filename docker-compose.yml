@@ -28,6 +28,7 @@ services :
             MONGODB_USERNAME: user
             MONGODB_PASSWORD: password
             MONGODB_HOSTNAME: mongodb
+            IP_RESPONDER : "192.168.1.00"
         networks :
             - webappnetwork
         depends_on: 
@@ -62,9 +63,10 @@ services :
         depends_on:
             - mongo 
         command: "mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Modules --type json --file /data/Modules.json --jsonArray
-                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Scans --type json --file /data/Scans.json --jsonArray
+                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Scans --type json --file /data/Scans.json --jsonArray 
                 && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Users --type json --file /data/Users.json --jsonArray 
-                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Teams --type json --file /data/Teams.json --jsonArray"
+                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection Teams --type json --file /data/Teams.json --jsonArray
+                && mongoimport --host mongodb --authenticationDatabase admin --username root --password password --db AutoScanDb --port 27017  --mode upsert --collection ScansAd --type json --file /data/ScansAd.json --jsonArray"
 
     metasploit : 
         container_name: metasploit 
@@ -77,7 +79,52 @@ services :
             - webappnetwork
         depends_on : 
             - api
-            
+
+    nmap: 
+        container_name: nmap
+        hostname : nmap 
+        build: ./nmap 
+        networks: 
+            - webappnetwork
+        depends_on: 
+            - api 
+
+    smbmap: 
+        container_name: smbmap
+        hostname: smbmap
+        build : ./smbmap
+        networks: 
+            - webappnetwork
+        depends_on: 
+            - api 
+
+    crackmapexec : 
+        container_name: crackmapexec
+        hostname: crackmapexec
+        build: ./crackmapexec
+        networks: 
+            - webappnetwork
+        depends_on: 
+            - api
+
+    john : 
+        container_name: john
+        hostname: john
+        build: ./john
+        networks: 
+            - webappnetwork
+        depends_on: 
+            - api
+
+    impacket : 
+        container_name: impacket
+        hostname: impacket
+        build : ./impacket
+        networks: 
+            - webappnetwork
+        depends_on: 
+            - api
+                       
 networks :  
     webappnetwork:
         driver : bridge

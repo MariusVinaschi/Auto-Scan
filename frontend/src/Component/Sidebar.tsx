@@ -45,8 +45,10 @@ interface TypeSidebarLink {
 }
 
 const SidebarLinks : TypeSidebarLink[] = [
-    {label:'New Scan' , path:'/newScan'},
-    {label:'My Scans' , path:'/scans'},
+    {label:'New Metasploit Scan' , path:'/newScan'},
+    {label:'New AD Scan' , path:'/newScanAd'},
+    {label:'My Metasploit Scans' , path:'/scans'},
+    {label:'My AD Scans',path:'/scansAd'},
     {label:'My Teams' , path:'/teams'},
     {label:'Profile' , path:'/profile'},
 ]

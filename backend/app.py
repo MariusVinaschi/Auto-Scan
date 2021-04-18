@@ -10,6 +10,8 @@ from resources.scan import Scan , Scans , NewScan
 from resources.team import Team , Teams
 from resources.user import User 
 from resources.server import Server 
+from resources.scan_ad import NewScanAd, ScanAd, ScansAd
+
 from blacklist import BLACKLIST 
 
 app = Flask(__name__)
@@ -59,6 +61,11 @@ api.add_resource(Login,'/login')
 api.add_resource(NewScan,'/newScan')
 api.add_resource(Scan,'/scan/<string:_idScan>')
 api.add_resource(Scans,'/scans')
+
+##### Scan_Ad ##### 
+api.add_resource(NewScanAd,'/newScanAd')
+api.add_resource(ScanAd,'/scanAd/<string:_idScan>')
+api.add_resource(ScansAd,'/scansAd')
 
 ##### Team ######
 api.add_resource(Team,'/team/<string:_idTeam>')

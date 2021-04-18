@@ -1,0 +1,6 @@
+uvicorn
+fastapi
+impacket
+pydantic
+typing
+datetime
